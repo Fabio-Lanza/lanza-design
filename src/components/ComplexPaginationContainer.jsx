@@ -1,6 +1,6 @@
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useLocation } from "react-router-dom";
 
-const PaginationContainer = () => {
+const ComplexPaginationContainer = () => {
   const { meta } = useLoaderData();
   const { pageCount, page } = meta.pagination;
 
@@ -22,7 +22,7 @@ console.log(pathname)
   if (pageCount < 2) return null;
 
   return (
-    <div className="mt-16 flex justify-end">
+    <div className="mt-16 flex ">
       <div className="join">
         <button
           className="btn btn-xs sm:btn-md join-item"
@@ -59,7 +59,7 @@ console.log(pathname)
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PaginationContainer;
+export default ComplexPaginationContainer

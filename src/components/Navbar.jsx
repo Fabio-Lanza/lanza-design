@@ -2,41 +2,31 @@ import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
-import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../Redux/user/userSlice";
 
-const themes = {
-    winter: 'cupcake',
-    dracula: 'dracula',
-}
-
-const getThemeFromLocalStorage = () => {
-  return localStorage.getItem('theme') || themes.winter
-}
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage);
+  const dispatch = useDispatch();
+  const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
   const handleTheme = () => {
-    const {winter, dracula} = themes;
-    const newTheme = theme === winter ? dracula : winter;
-    setTheme(newTheme);
-};
-
-useEffect(() => {
- document.documentElement.setAttribute('data-theme', theme)
- localStorage.setItem('theme', theme)
-  }, [theme]);
+    dispatch(toggleTheme());
+  };
 
   return (
     <nav className="bg-base-200">
       <div className="navbar align-element">
         <div className="navbar-start flex flex-col">
           {/* LOGO */}
-          <NavLink to="/"
+          <NavLink
+            to="/"
             className="hidden lg:flex btn btn-primary text-[28px] font-thin w-32  "
           >
             Lanza
-            <span className="text-sm capitalize font-bold mt-[-10px]">Design</span>
+            <span className="text-sm capitalize font-bold mt-[-10px]">
+              Design
+            </span>
           </NavLink>
 
           {/* DROPDOWN */}
@@ -65,9 +55,9 @@ useEffect(() => {
           <label className="swap swap-rotate">
             <input type="checkbox" id="switch" onChange={handleTheme} />
             {/* sun */}
-            <BsSunFill className="swap-on h-4 w-4"/>
+            <BsSunFill className="swap-on h-4 w-4" />
             {/* moom */}
-            <BsMoonFill className="swap-off h-4 w-4"/>
+            <BsMoonFill className="swap-off h-4 w-4" />
           </label>
 
           {/* Cart Link */}
@@ -75,7 +65,7 @@ useEffect(() => {
             <div className="indicator">
               <BsCart3 className="h-6 w-6" />
               <span className="badge badge-sm badge-primary indicator-item">
-                5
+                {numItemsInCart}
               </span>
             </div>
           </NavLink>

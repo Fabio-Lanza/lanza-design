@@ -3,7 +3,21 @@
 @tailwind utilities;
 
 @layer components {
-   .align-element{
+  .align-element {
     @apply mx-auto max-w-6xl px-8;
-   } 
+  }
+}
+
+.slider-overlay {
+  background: #000;
+  /* background: linear-gradient(90deg, #060606, hsla(0, 0%, 100%, 0)); */
+  background: linear-gradient(
+    90deg,
+    rgba(42, 42, 42, 1) 0%,
+    rgba(255, 255, 255, 0.2) 100%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
