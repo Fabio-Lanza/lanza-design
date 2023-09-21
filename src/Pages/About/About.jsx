@@ -30,10 +30,9 @@ const About = () => {
       </p>
 
       <p className="mt-6 text-lg leading-8 max-w-2xl mx-auto mb-2">
-        At Lanza Design, we believe that furniture should not only reflect your
-        personal style but also enhance your lifestyle. Whether you seek modern
-        minimalism, rustic warmth, or opulent luxury, our meticulously curated
-        collection has something to inspire your vision.
+        Whether you seek modern minimalism, rustic warmth, or opulent luxury,
+        our meticulously curated collection has something to inspire your
+        vision.
       </p>
     </>
   );

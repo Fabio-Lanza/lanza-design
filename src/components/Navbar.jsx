@@ -31,8 +31,8 @@ const Navbar = () => {
 
           {/* DROPDOWN */}
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost btn-circle lg:hidden">
-              <FaBarsStaggered className="h-6 w-6" />
+            <label tabIndex={0} className="btn btn-ghost btn-circle lg:hidden ">
+              <FaBarsStaggered className="h-6 w-6 " />
             </label>
             <ul
               tabIndex={0}
