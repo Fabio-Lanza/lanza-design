@@ -1,27 +1,22 @@
-import { useState } from 'react';
-import { FeaturedProducts, Hero } from '../../components'
-import { customFetch } from './../../utils/index';
+import { useState } from "react";
+import { FeaturedProducts, Hero } from "../../components";
+import { customFetch } from "./../../utils/index";
 
+const url = "/products?featured=true";
 
-
-const url = '/products?featured=true'
-
-export const loader = async ()=> {
-  const response = await customFetch(url)
-  const products = response.data.data
-  return {products}
-}
-
+export const loader = async () => {
+  const response = await customFetch(url);
+  const products = response.data.data;
+  return { products };
+};
 
 const Landing = () => {
-  
-
   return (
     <>
-    <Hero />
-    <FeaturedProducts />
+      <Hero />
+      <FeaturedProducts />
     </>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;
