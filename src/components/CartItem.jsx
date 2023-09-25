@@ -3,16 +3,17 @@ import { removeItem, editItem } from "../Redux/cart/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartItem = ({ cartItem }) => {
-  const {cartID, title, price, image, amount, company, productColor}=cartItem;
-   const dispatch = useDispatch() 
+  const { cartID, title, price, image, amount, company, productColor } =
+    cartItem;
+  const dispatch = useDispatch();
 
-   const removeItemFromCart = ()=> {
-    dispatch(removeItem({cartID}))
-   }
+  const removeItemFromCart = () => {
+    dispatch(removeItem({ cartID }));
+  };
 
-   const handleAmount = (e) => {
-    dispatch(editItem({cartID, amount: parseInt(e.target.value) }))
-   }
+  const handleAmount = (e) => {
+    dispatch(editItem({ cartID, amount: parseInt(e.target.value) }));
+  };
 
   return (
     <>
@@ -65,8 +66,10 @@ const CartItem = ({ cartItem }) => {
           </div>
 
           {/* Remove */}
-          <button className="mt-2 link link-primary link-hover text-sm"
-          onClick={removeItemFromCart}>
+          <button
+            className="mt-2 link link-primary link-hover text-sm"
+            onClick={removeItemFromCart}
+          >
             remove
           </button>
         </div>

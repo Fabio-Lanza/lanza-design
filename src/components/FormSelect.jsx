@@ -13,7 +13,12 @@ const FormSelect = ({ label, name, list, defaultValue, size }) => {
         defaultValue={defaultValue}
       >
         {list.map((item) => {
-            return <option key={item} value={item}> {item} </option>
+          return (
+            <option key={item} value={item}>
+              {" "}
+              {item}{" "}
+            </option>
+          );
         })}
       </select>
     </div>

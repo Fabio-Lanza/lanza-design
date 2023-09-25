@@ -57,11 +57,11 @@ const Filters = () => {
       />
 
       {/* Shipping*/}
-      <FormCheckbox 
-      name="shipping" 
-      label="free shipping" 
-      size="checkbox-sm" 
-      defaultValue={shipping}
+      <FormCheckbox
+        name="shipping"
+        label="free shipping"
+        size="checkbox-sm"
+        defaultValue={shipping}
       />
 
       {/* Buttons */}

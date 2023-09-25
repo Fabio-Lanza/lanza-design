@@ -17,7 +17,7 @@ const FormRange = ({ label, name, size, price }) => {
         min={0}
         max={maxPrice}
         value={selectedPrice}
-        onChange={(e)=> setSelectedPrice(e.target.value)}
+        onChange={(e) => setSelectedPrice(e.target.value)}
         className={`range range-primary ${size}`}
         step={step}
       />

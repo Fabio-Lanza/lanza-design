@@ -1,11 +1,9 @@
-import { useRouteError } from 'react-router-dom';
+import { useRouteError } from "react-router-dom";
 
 const ErrorElement = () => {
-    const error = useRouteError()
+  const error = useRouteError();
 
-  return (
-    <h4 className='font-bold text-4xl'>ErrorElement</h4>
-  )
-}
+  return <h4 className="font-bold text-4xl">ErrorElement</h4>;
+};
 
-export default ErrorElement
+export default ErrorElement;
